@@ -2,7 +2,7 @@ LUA Modules
 =========
 作者: 龚辟愚 <http://blog.csdn.net/bywayboy>
 
-C语言 LUA 模块包含如下内容:
+这个扩展的设计思路是,一切从简, json 默认支持UTF8. 但没有编码转换, 因此 如果有其他特殊字符，您的LUA源代码必须是UTF8 编码才可以正常工作，其它编码我没有测试过. C语言 LUA 模块包含如下内容:
 
 
 *	一个迷你的 LUA模板引擎.
@@ -28,7 +28,9 @@ C语言 LUA 模块包含如下内容:
 	
 ```
 
-###JSON编码解码器用法示例:
+##JSON编码解码器用法示例:
+
+JSON 部分提供2个函数 json_encode 将 lua数据类型转换成 json文本, json_decode 将 JSON格式的文本转换为LUA 的 TABLE.
 
 ```lua
 	local lmu = require "lmu"
@@ -40,6 +42,12 @@ C语言 LUA 模块包含如下内容:
 	}
 	
 	-- lua table to json string.
+	-- tow arguments, 
+	--		arg 1 a lua variable.
+	--		arg 2 boolean  
+	---				true: encode utf8 to \uXXXX.
+	---				false: unescape utf8 char.
+	-- return 2 values.
 	local succ, json_str = lmu.json_encode(users)
 	print(succ,json_str)
 	
