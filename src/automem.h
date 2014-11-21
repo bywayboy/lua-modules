@@ -1,3 +1,8 @@
+/*
+License: MIT
+Author: liigo.zhuang<liigo.zhuag@gmail.com>
+Date: 2014-11-21
+*/
 #ifndef __AUTOMEM_H
 #define __AUTOMEM_H
 
