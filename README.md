@@ -32,19 +32,19 @@ C语言 LUA 模块包含如下内容:
 	local lmu = require "lmu"
 	
 	local users={
-		{['id']=1,['username']='liigo.zhuang',['age']=26},
-		{['id']=2,['username']='bywayboy',['age']=26},
-		{['id']=3,['username']='sunwei',['age']=23},
+		{['ID']=1,['username']='liigo.zhuang',['age']=26},
+		{['ID']=2,['username']='bywayboy',['age']=26},
+		{['ID']=3,['username']='sunwei',['age']=23},
 	}
 	
 	-- lua table to json string.
-	local json_str = lmu.json_encode(users)
-	print(json_str)
+	local succ, json_str = lmu.json_encode(users)
+	print(succ,json_str)
 	
 	--- json string to lua table.
-	local table = lmu.json_decode(json_str)
-	for i,item in pairs(table) do
-		print('ID='..item['ID'],'username='..item['username']，'age='..item['age'])
+	local users = lmu.json_decode(json_str)
+	for i,item in pairs(users) do
+		print('ID='..item['ID'], 'username='..item['username'], 'age='..item['age'])
 	end
 	
 	
