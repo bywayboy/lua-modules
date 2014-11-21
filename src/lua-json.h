@@ -2,7 +2,7 @@
 #define _LUA_JSON_PARSER_H
 /*
 License: MIT
-Author: bywayboy<bywayboy@gmail>
+Author: bywayboy<bywayboy@gmail.com>
 Date: 2014-11-21
 */
 

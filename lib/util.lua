@@ -1,3 +1,8 @@
+--[[
+License: MIT
+Author: bywayboy<bywayboy@gmail.com>
+Date: 2014-11-21
+]]--
 local util = {}
 function util.tpl(writer)
 	local lmu =  require "lmu"
