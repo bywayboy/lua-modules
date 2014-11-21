@@ -1,6 +1,6 @@
 local util = {}
 function util.tpl(writer)
-	local t =  require "cfmt.tpl"
+	local lmu =  require "lmu"
 	local tpl = {}
 	local VARS = {} -- save the assigned variables.
 	local _prefix
@@ -23,7 +23,7 @@ function util.tpl(writer)
 		local w = VARS['_']
 		VARS['usetime']=0
 		exectime = os.clock()
-		local code =t.compile(tpl,cache, VARS, "_", _prefix, _suffix)
+		local code =lmu.compile(tpl,cache, VARS, "_", _prefix, _suffix)
 		VARS['usetime']=string.format("%2f",(os.clock()-exectime) * 1000)
 		load(code)(VARS) -- run compiled tpl code.
 	end
