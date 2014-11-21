@@ -1,6 +1,6 @@
 /*
 License: MIT
-Author: liigo.zhuang<liigo.zhuag@gmail.com>
+Author: liigo.zhuang<com.liigo@gmail.com>, bywayboy<bywayboy@gmail.com>
 Date: 2014-11-21
 */
 #include <stdio.h>
