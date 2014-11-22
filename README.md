@@ -17,7 +17,11 @@ LUA Modules
 	cd lua-modules
 	cmake .
 	make && make install
+<<<<<<< HEAD
 ```
+=======
+``
+>>>>>>> 89bb08b332236582209f6f5bf93d7e165eec5899
 
 
 ##模板引擎用法示例:
