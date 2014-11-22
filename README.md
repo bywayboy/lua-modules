@@ -8,6 +8,18 @@ LUA Modules
 *	一个迷你的 LUA模板引擎.
 *	一个小型的 JSON 编码/解码器.
 
+##编译和安装.
+
+这个模块是基于LUA 5.2 开发的。它运行需要依赖 lua的库. 编译它之前您需要先安装 cmake 编译方法:
+
+```shell
+	git clone https://github.com/bywayboy/lua-modules.git
+	cd lua-modules
+	cmake .
+	make && make install
+```
+
+
 ##模板引擎用法示例:
 
 以下代码展示了LUA模板引擎的使用方法.
