@@ -117,19 +117,19 @@ static int _lua_json_parse_string(jsontok_t * tok, const char quote)
 			break;
 		case lt_string_escape:
 			switch(c){
-			case 'b': automem_append_byte(&tok->mem, '\b');tok->pos++;break;
-			case 'n': automem_append_byte(&tok->mem, '\n');tok->pos++;break;
-			case 'r': automem_append_byte(&tok->mem, '\r');tok->pos++;break;
-			case 't': automem_append_byte(&tok->mem, '\t');tok->pos++;break;
-			case 'f': automem_append_byte(&tok->mem, '\f');tok->pos++;break;
-			case '\\': automem_append_byte(&tok->mem, '\\');tok->pos++;break;
-			case '/': automem_append_byte(&tok->mem, '/');tok->pos++;break;
+			case 'b': automem_append_byte(&tok->mem, '\b');tok->pos++;s=lt_string;break;
+			case 'n': automem_append_byte(&tok->mem, '\n');tok->pos++;s=lt_string;break;
+			case 'r': automem_append_byte(&tok->mem, '\r');tok->pos++;s=lt_string;break;
+			case 't': automem_append_byte(&tok->mem, '\t');tok->pos++;s=lt_string;break;
+			case 'f': automem_append_byte(&tok->mem, '\f');tok->pos++;s=lt_string;break;
+			case '\\': automem_append_byte(&tok->mem, '\\');tok->pos++;s=lt_string;break;
+			case '/': automem_append_byte(&tok->mem, '/');tok->pos++;s=lt_string;break;
 			case 'u':
 				s=lt_string_escape_unicode;
 				tok->pos++;
 				break;
 			default:
-				automem_append_byte(&tok->mem,'\\');automem_append_byte(&tok->mem,c);tok->pos++;break;
+				automem_append_byte(&tok->mem,'\\');automem_append_byte(&tok->mem,c);tok->pos++;s=lt_string;break;
 			}
 			break;
 		case lt_string_escape_unicode:
