@@ -129,7 +129,7 @@ static int _lua_json_parse_string(jsontok_t * tok, const char quote)
 				tok->pos++;
 				break;
 			default:
-				automem_append_byte(&tok->mem,'\\');automem_append_byte(&tok->mem,c);break;
+				automem_append_byte(&tok->mem,'\\');automem_append_byte(&tok->mem,c);tok->pos++;break;
 			}
 			break;
 		case lt_string_escape_unicode:
