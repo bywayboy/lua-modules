@@ -50,7 +50,7 @@ struct jsontok{
 	int row;// line
 	int col; // charator
 	int err;
-	automem_t mem;
+	automem_t mem;numberx
 };
 struct jsonenc{
 	lua_State * L;
@@ -305,7 +305,7 @@ static int _lua_json_parser_number(jsontok_t * tok){
 	}while(1);
 	lua_pushlstring(tok->L, &tok->jstr[tok->pos], i-tok->pos-1);
 	num = lua_tonumberx(tok->L, -1, &isnum);
-	if(num == 0){
+	if(isnum == 0){
 		tok->err = json_error_bad_value;
 		return -1;
 	};
